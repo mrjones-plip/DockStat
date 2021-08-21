@@ -15,4 +15,4 @@ To use DockStat:
 1. Ensure you have Docker installed
 1. Clone this repo
 1. `cd` into this repo
-1. Run `./docker-status.sh`
+1. Run `./DockStat.sh`
