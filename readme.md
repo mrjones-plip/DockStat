@@ -16,3 +16,20 @@ To use DockStat:
 1. Clone this repo
 1. `cd` into this repo
 1. Run `./DockStat.sh`
+
+This should run on any OS, but has only been tested on Ubuntu.
+
+## Stats Shown
+
+DockStat will list:
+* Host load average
+* Host total processes
+* Host total Docker processes
+* Per container table showing:
+    * Name
+    * Docker IP
+    * Ports mapped
+    * Up time with process count
+* Docker networks
+* Docker volumes
+* Docker images
