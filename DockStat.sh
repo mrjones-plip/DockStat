@@ -2,8 +2,8 @@
 
 ##########################################################
 ##                                                      ##
-#    Helper script to show running docker containers     #
-#             and related docker resources               #
+#    Helper script to show running Docker containers     #
+#             and related Docker resources               #
 ##                                                      ##
 ##########################################################
 
@@ -18,7 +18,15 @@ get_load_avg() {
 }
 
 get_docker_process_count(){
-  echo 6
+  count=0
+  containers="$1"
+  containersArray=$( docker ps | awk '{if(NR>1) print $NF}' )
+  for container in $containersArray
+  do
+    tmpCount=$( docker top "${container}"  | tail -n +2 | wc -l )
+    count="$(( tmpCount + count ))"
+  done
+  echo "$count"
 }
 
 # shellcheck disable=SC2046
