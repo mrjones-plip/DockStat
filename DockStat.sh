@@ -19,9 +19,7 @@ get_load_avg() {
 
 get_global_docker_process_count() {
   count=0
-  if [ -z $1 ]; then
-    containersArray=$(docker ps | awk '{if(NR>1) print $NF}')
-  fi
+  containersArray=$(docker ps | awk '{if(NR>1) print $NF}')
   for container in $containersArray; do
     tmpCount=$(get_container_process_count "$container")
     count="$((tmpCount + count))"
