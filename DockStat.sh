@@ -32,10 +32,36 @@ get_container_process_count(){
   echo $(docker top "${container}" | tail -n +2 | wc -l)
 }
 
+required_apps_installed(){
+  error=''
+  appString=$1
+  IFS=';' read -ra appsArray <<<"$appString"
+  for app in "${appsArray[@]}"; do
+    if ! command -v "$app" &>/dev/null; then
+      error="${app} ${error}"
+    fi
+  done
+  echo "${error}"
+}
+
 # shellcheck disable=SC2046
 . $(dirname $0)/simple_curses.sh
 
 main() {
+
+  declare -r APP_STRING="docker;docker-compose;awk;echo;ps;wc"
+
+  # with constants set, let's ensure all the apps are present, exit if not
+  appStatus=$(required_apps_installed "$APP_STRING")
+  if [ -n "$appStatus" ]; then
+    window "WARNING: Missing Apps" "red" "100%"
+    append "Install before proceeding:"
+    append "$appStatus"
+    endwin
+    set -e
+    return 0
+  fi
+
   containers=$(docker ps | awk '{if(NR>1) print $NF}')
   containerCount=$(docker ps | tail -n +2 | wc -l)
 
