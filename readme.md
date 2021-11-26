@@ -32,4 +32,4 @@ DockStat will list:
     * Up time with process count
 * Docker networks
 * Docker volumes
-* Docker images
+* Docker images 
