@@ -38,4 +38,4 @@ DockStat will list:
 
 Unsurprisingly, there's a lot of other great work in this area.  Here's a list of projects as I've discovered them since writing DockStat:
 
-* [ctop](https://github.com/bcicen/ctop)
+* [ctop](https://github.com/bcicen/ctop) - Top-like interface for container metrics
