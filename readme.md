@@ -39,3 +39,4 @@ DockStat will list:
 Unsurprisingly, there's a lot of other great work in this area.  Here's a list of projects as I've discovered them since writing DockStat:
 
 * [ctop](https://github.com/bcicen/ctop) - Top-like interface for container metrics
+* [lazydocker](https://github.com/jesseduffield/lazydocker) - Self desribed as "A simple terminal UI for both docker and docker-compose, written in Go with the gocui library."
