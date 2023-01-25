@@ -40,3 +40,5 @@ Unsurprisingly, there's a lot of other great work in this area.  Here's a list o
 
 * [ctop](https://github.com/bcicen/ctop) - Top-like interface for container metrics
 * [lazydocker](https://github.com/jesseduffield/lazydocker) - Self desribed as "A simple terminal UI for both docker and docker-compose, written in Go with the gocui library."
+* `docker stats` - [built into docker](https://docs.docker.com/engine/reference/commandline/stats/) - just run it!
+* [Dozzle](https://dozzle.dev/) -  Self desribed as "Dozzle is a small lightweight application with a web based interface to monitor Docker logs. It doesn’t store any log files. It is for live monitoring of your container logs only." 
